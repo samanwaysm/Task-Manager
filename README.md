@@ -14,7 +14,7 @@ git clone https://github.com/samanwaysm/Task-Manager.git
 ### Navigate to the project directory:
 
 ```bash
-cd task-management-app
+cd Task-Manager
 ```
 
 ### Install dependencies:
