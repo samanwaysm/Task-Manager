@@ -1,5 +1,5 @@
-#Task Management Application
-#Introduction
+# Task Management Application
+## Introduction
 This is a task management application built with Node.js, Express, MongoDB, and EJS. The application includes Google Sign-In authentication using passport and passport-google-oauth20.
 
 
