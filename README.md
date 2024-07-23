@@ -5,14 +5,15 @@ This is a task management application built with Node.js, Express, MongoDB, and 
 
 ## Setup Instructions:
 
-#### Clone the repository:
+### Clone the repository:
 
 git clone https://github.com/yourusername/task-management-app.git
 
-#### Navigate to the project directory:
+### Navigate to the project directory:
 
 cd task-management-app
-Install dependencies:
+
+### Install dependencies:
 
 npm install
 Configure environment variables:
