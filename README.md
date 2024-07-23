@@ -7,7 +7,7 @@ This is a task management application built with Node.js, Express, MongoDB, and 
 
 ### Clone the repository:
 
-git clone https://github.com/yourusername/task-management-app.git
+git clone https://github.com/samanwaysm/Task-Manager.git
 
 ### Navigate to the project directory:
 
@@ -16,23 +16,26 @@ cd task-management-app
 ### Install dependencies:
 
 npm install
-Configure environment variables:
-Create a .env file in the root directory with the following variables:
+
+### Configure environment variables:
+#### Create a .env file in the root directory with the following variables:
 DB_URI=your_mongodb_uri
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 SESSION_SECRET=your_session_secret
-Run the application:
 
+### Run the application:
 npm start
-Access the application:
+
+### Access the application:
 Open your browser and navigate to http://localhost:3000.
 
-Set up Passport for Google Authentication:
+### Set up Passport for Google Authentication:
 
 Ensure that your Google OAuth 2.0 credentials (Client ID and Client Secret) are correctly added to the .env file. Also, make sure the callback URL matches the one set in your Google Developer Console.
 
 Running the Application
+
 Start the server:
 
 npm start
