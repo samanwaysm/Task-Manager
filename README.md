@@ -6,7 +6,9 @@ This is a task management application built with Node.js, Express, MongoDB, and 
 ## Setup and Installation :
 ### Prerequisites
 Node.js and npm installed on your system
+
 MongoDB installed and running
+
 Google Developer account with OAuth 2.0 credentials
 
 ### Clone the repository:
@@ -56,5 +58,7 @@ Open your browser and go to http://localhost:3000.
 ## Features
 
 Task creation, update, and deletion
+
 User authentication with Google Sign-In
+
 Responsive design with EJS templating
