@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.logo {
+    height: 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-box {
+    max-width: 100%;
+}
+
+.login-box h2 {
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #fdfeff;
+    border-color: #fafafa;
+    color: #007bff;
+}
+.btn-secondary:hover {
+    background-color: #fdfeff;
+    border-color: #fafafa;
+    color: #007bff;
+}
+.error{
+    color: red;
+    font-size: 13px;
+}
+
+.general-error {
+    text-align: center;
+    color: red; /* Optional: Customize the color */
+    font-weight: bold; /* Optional: Customize the font weight */
+}
