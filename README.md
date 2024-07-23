@@ -33,16 +33,6 @@ SESSION_SECRET = your_session_secret
 PORT = 4000
 ```
 
-### Run the application:
-
-```bash
-npm start
-```
-
-### Access the application:
-
-Open your browser and navigate to http://localhost:3000.
-
 ### Set up Passport for Google Authentication:
 
 Ensure that your Google OAuth 2.0 credentials (Client ID and Client Secret) are correctly added to the .env file. Also, make sure the callback URL matches the one set in your Google Developer Console.
