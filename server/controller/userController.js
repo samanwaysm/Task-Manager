@@ -7,25 +7,14 @@ const mongoose = require("mongoose");
 var userDb = require("../model/userSchema");
 var taskDb = require("../model/taskSchema");
 
-// Handle Google authentication
 exports.googleAuth = async (req, res) => {
-    // console.log(req.user, 'dsfjlkdsfjkdsjf');
-    // const { token } = req.body;
     try {
-        // const ticket = await client.verifyIdToken({
-        //     idToken: req.user.id,
-        //     audience: process.env.GOOGLE_CLIENT_ID,
-        // });
-        // console.log(ticket);
-        // const payload = ticket.getPayload();
         const { sub, email, name, given_name, family_name } = req.user;
         console.log(sub, email, name);
-
         // Check if the user already exists
         let user = await userDb.findOne({ email });
 
         if (!user) {
-            // Create a new user if they don't exist
             user = new userDb({
                 firstName: given_name,
                 lastName: family_name,
@@ -36,7 +25,6 @@ exports.googleAuth = async (req, res) => {
             await user.save();
         }
 
-        // Implement your session management logic here
         req.session.email = email;
         req.session.userId = user._id;
         req.session.isUserAuthenticated = true;
@@ -75,7 +63,6 @@ exports.registerUser = async (req,res)=>{
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create a new user object
         const newUser = new userDb({
             firstName,
             lastName,
@@ -87,8 +74,6 @@ exports.registerUser = async (req,res)=>{
         await newUser.save();
 
         res.redirect('/login');
-        // Send a success response
-        // res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
         // Handle any errors
         console.log('error working');
@@ -123,7 +108,6 @@ exports.loginUser = async (req,res)=>{
         // Compare the provided password with the hashed password
         const isMatch = await bcrypt.compare(password, user.password);
         
-        // Check if passwords match
         if (!isMatch) {
             errors.general = 'Invalid email or password';
             req.session.errors = errors;
@@ -137,7 +121,6 @@ exports.loginUser = async (req,res)=>{
         // Redirect to the home page after successful login
         res.redirect('/');
     } catch (error) {
-        // Handle any errors
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 }

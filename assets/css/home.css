@@ -33,7 +33,7 @@ body {
 }
 
 .task {
-    background-color: #e7f3ff;
+    background-color: #c2dcf7;
 }
 
 .task h5 {
@@ -47,4 +47,16 @@ body {
 
 .mt-2 button {
     margin-right: 5px;
+}
+.todo-header {
+    background-color: #007bff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+}
+
+.todo-header h4 {
+    color: #ffffff; 
+    margin: 0;
 }

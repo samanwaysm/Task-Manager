@@ -107,8 +107,6 @@
         function handleCredentialResponse(response) {
             // Handle Google Sign-In response
             // You can send this response to your backend for further processing
-            console.log(response);
-            // Example: send response to your backend
             fetch('/auth/google/callback', {
                 method: 'POST',
                 headers: {

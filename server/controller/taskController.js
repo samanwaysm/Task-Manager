@@ -43,9 +43,7 @@ exports.addTask = async (req,res)=>{
 
 exports.displayTask = async (req,res)=>{
     try {
-        // const userId = req.session.userId;
         const userId = req.query.userId;
-        // Find the user's tasks
         const userTasks = await taskDb.findOne({ userId });
 
         if (!userTasks || !userTasks.tasks || userTasks.tasks.length === 0) {
@@ -54,7 +52,6 @@ exports.displayTask = async (req,res)=>{
         }
         res.status(200).json(userTasks.tasks);
     } catch (error) {
-        // Handle any errors
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 }
@@ -113,7 +110,6 @@ exports.updateStatus = async (req, res) => {
         //     return res.status(404).send({ message: "Task not found" });
         // }
         res.redirect('/')
-        // res.send({ message: "Task status updated successfully", task });
     } catch (error) {
         res.status(500).send({ message: "Server error", error });
     }
@@ -124,7 +120,6 @@ exports.searchTasks = async (req, res, next) => {
         const { userId } = req.session;
         const { query } = req.query;
         console.log(userId,query);
-        // Search for tasks matching the query
         const tasks = await taskDb.find({
             userId,
             'tasks': {
@@ -140,8 +135,6 @@ exports.searchTasks = async (req, res, next) => {
         const filteredTasks = tasks[0].tasks.filter(task =>
             new RegExp(query, 'i').test(task.task) || new RegExp(query, 'i').test(task.description)
         );
-        console.log(filteredTasks);
-        // Send the filtered tasks as a response
         res.status(200).json(filteredTasks);
 
     }catch (err) {
@@ -154,7 +147,6 @@ exports.sortTasks = async (req, res, next) => {
         const { userId } = req.session;
         const { sortBy } = req.query;
         
-        // Determine the sort option based on the sortBy parameter
         const sortOption = sortBy === 'recent' ? { createdAt: -1 } : { createdAt: 1 };
 
         // Find tasks for the user and sort them
@@ -164,7 +156,6 @@ exports.sortTasks = async (req, res, next) => {
             return res.status(404).json({ message: 'No tasks found for the user.' });
         }
 
-        // Sort tasks based on the provided sort option
         const sortedTasks = userTasks.tasks.sort((a, b) => {
             if (sortOption.createdAt === -1) {
                 return new Date(b.createdAt) - new Date(a.createdAt);
@@ -172,7 +163,6 @@ exports.sortTasks = async (req, res, next) => {
                 return new Date(a.createdAt) - new Date(b.createdAt);
             }
         });
-        // console.log(sortedTasks);
         // Send sorted tasks as a response
         res.status(200).json(sortedTasks);
     } catch (err) {

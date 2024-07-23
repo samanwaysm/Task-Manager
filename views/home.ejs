@@ -7,7 +7,7 @@
     <title>Task Management</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css">
 </head>
@@ -66,14 +66,16 @@
             <!-- TODO Column -->
             <div class="col-12 col-md-4 p-3">
                 <div class="todo-list bg-white p-3 shadow rounded mb-4 h-100" style="max-height: fit-content;">
-                    <h4 class="text-primary">TODO</h4>
+                    <div class="todo-header">
+                        <h4 class="text-white">TODO</h4>
+                    </div>
                     <% let todoTasks=tasks.filter(task=> task.status === 'todo'); %>
                     <% if (todoTasks.length === 0) { %>
                         <p class="noTaskMessage" >No Task Available.</p>
                     <% } %>
                     <div id="sortable1" class="connectedSortable h-100" style="cursor: pointer;" data-status="todo">
                         <% todoTasks.forEach(task=> { %>
-                            <div class="task bg-light p-3 mb-2 rounded" data-task-id="<%= task._id %>">
+                            <div class="task p-3 mb-2 rounded" data-task-id="<%= task._id %>">
                                 <h5>
                                     <%= task.task %>
                                 </h5>
@@ -101,14 +103,16 @@
             <!-- IN PROGRESS Column -->
             <div class="col-12 col-md-4 p-3">
                 <div class="todo-list bg-white p-3 shadow rounded mb-4 h-100" style="max-height: fit-content;">
-                    <h4 class="text-primary">IN PROGRESS</h4>
+                    <div class="todo-header">
+                        <h4 class="text-white">IN PROGRESS</h4>
+                    </div>
                     <% let inProgressTasks=tasks.filter(task=> task.status === 'inProgress'); %>
                     <% if (inProgressTasks.length === 0) { %>
                         <p class="noTaskMessage">No Task Available.</p>
                     <% } %>
                     <div id="sortable2" class="connectedSortable h-100" data-status="inProgress">
                         <% inProgressTasks.forEach(task=> { %>
-                            <div class="task bg-light p-3 mb-2 rounded" style="cursor: pointer;" data-task-id="<%= task._id %>">
+                            <div class="task p-3 mb-2 rounded" style="cursor: pointer;" data-task-id="<%= task._id %>">
                                 <h5>
                                     <%= task.task %>
                                 </h5>
@@ -136,14 +140,16 @@
             <!-- DONE Column -->
             <div class="col-12 col-md-4 p-3">
                 <div class="todo-list bg-white p-3 shadow rounded mb-4 h-100" style="max-height: fit-content;">
-                    <h4 class="text-primary">DONE</h4>
+                    <div class="todo-header">
+                        <h4 class="text-white">DONE</h4>
+                    </div>
                     <% let doneTasks=tasks.filter(task=> task.status === 'done'); %>
                     <% if (doneTasks.length === 0) { %>
                         <p class="noTaskMessage">No Task Available.</p>
                     <% } %>
                     <div id="sortable3" class="connectedSortable h-100" data-status="done">
                         <% doneTasks.forEach(task=> { %>
-                            <div class="task bg-light p-3 mb-2 rounded" style="cursor: pointer;" data-task-id="<%= task._id %>">
+                            <div class="task p-3 mb-2 rounded" style="cursor: pointer;" data-task-id="<%= task._id %>">
                                 <h5>
                                     <%= task.task %>
                                 </h5>
@@ -578,7 +584,7 @@
             document.getElementById('searchQuery').addEventListener('input', function () {
                 const query = this.value;
                 console.log(query);
-                axios.get(`/search?query=${query}`)
+                axios.get(`/api/search?query=${query}`)
                     .then(response => {
                         updateTaskLists(response.data);
                     })
@@ -591,7 +597,7 @@
             document.getElementById('sortBy').addEventListener('change', function () {
                 const sortBy = this.value;
 
-                axios.get(`/sort?sortBy=${sortBy}`)
+                axios.get(`/api/sort?sortBy=${sortBy}`)
                     .then(response => {
                         updateTaskLists(response.data);
                     })
