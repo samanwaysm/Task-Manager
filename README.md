@@ -13,23 +13,33 @@ git clone https://github.com/samanwaysm/Task-Manager.git
 
 ### Navigate to the project directory:
 
+```bash
 cd task-management-app
+```
 
 ### Install dependencies:
 
+```bash
 npm install
+```
 
 ### Configure environment variables:
 #### Create a .env file in the root directory with the following variables:
+```bash
 DB_URI=your_mongodb_uri
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 SESSION_SECRET=your_session_secret
+```
 
 ### Run the application:
+
+```bash
 npm start
+```
 
 ### Access the application:
+
 Open your browser and navigate to http://localhost:3000.
 
 ### Set up Passport for Google Authentication:
@@ -40,7 +50,10 @@ Running the Application
 
 Start the server:
 
+```bash
 npm start
+```
+
 Access the application:
 
 Open your browser and go to http://localhost:3000.
