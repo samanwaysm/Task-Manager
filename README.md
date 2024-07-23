@@ -3,20 +3,28 @@
 This is a task management application built with Node.js, Express, MongoDB, and EJS. The application includes Google Sign-In authentication using passport and passport-google-oauth20.
 
 
-#Clone the repository:
-git clone https://github.com/your-username/task-management-app.git
+## Setup Instructions:
+
+####Clone the repository:
+git clone https://github.com/yourusername/task-management-app.git
+
+#### Navigate to the project directory:
+
 cd task-management-app
+Install dependencies:
 
-#Install dependencies:
 npm install
-Set up environment variables:
+Configure environment variables:
+Create a .env file in the root directory with the following variables:
+DB_URI=your_mongodb_uri
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+SESSION_SECRET=your_session_secret
+Run the application:
 
-#Create a .env file in the root directory and add your configuration details:
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/taskmanager
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_CALLBACK_URL=http://localhost:3000/auth/google/callback
+npm start
+Access the application:
+Open your browser and navigate to http://localhost:3000.
 
 Set up Passport for Google Authentication:
 
