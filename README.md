@@ -46,19 +46,19 @@ Open your browser and navigate to http://localhost:3000.
 
 Ensure that your Google OAuth 2.0 credentials (Client ID and Client Secret) are correctly added to the .env file. Also, make sure the callback URL matches the one set in your Google Developer Console.
 
-Running the Application
+### Running the Application
 
-Start the server:
+#### Start the server:
 
 ```bash
 npm start
 ```
 
-Access the application:
+### Access the application:
 
 Open your browser and go to http://localhost:3000.
 
-Features
+## Features
 Task creation, update, and deletion
 User authentication with Google Sign-In
 Responsive design with EJS templating
