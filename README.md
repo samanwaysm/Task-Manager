@@ -26,10 +26,10 @@ npm install
 ### Configure environment variables:
 #### Create a .env file in the root directory with the following variables:
 ```bash
-DB_URI = mongodb+srv://samanwaysm7:aTRK4E7vRxZxqZza@cluster0.jjv1xsc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-GOOGLE_CLIENT_ID = your_google_client_id
-GOOGLE_CLIENT_SECRET = your_google_client_secret
-SESSION_SECRET = your_session_secret
+MONGO_URI = your mongodb_uri
+GOOGLE_CLIENT_ID = your google_client_id
+GOOGLE_CLIENT_SECRET = your google_client_secret
+SESSION_SECRET = your session_secret
 PORT = 4000
 ```
 
