@@ -7,6 +7,7 @@ This is a task management application built with Node.js, Express, MongoDB, and 
 
 ### Clone the repository:
 
+```bash
 git clone https://github.com/samanwaysm/Task-Manager.git
 
 ### Navigate to the project directory:
