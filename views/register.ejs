@@ -1,53 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <style>
-        .signup-container {
-            max-width: 500px;
-            margin: auto;
-            padding: 20px;
-            margin-top: 50px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            background-color: #fff;
-        }
-        .header {
-            background-color: #007bff;
-            padding: 10px 20px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-        .btn-secondary {
-            background-color: #fdfeff;
-            border-color: #fafafa;
-            color: #007bff;
-        }
-        .btn-secondary:hover {
-            background-color: #fdfeff;
-            border-color: #fafafa;
-            color: #007bff;
-        }
-        .error{
-            color: red;
-            font-size: 13px;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="/css/register.css">
 </head>
+
 <body>
 
     <div class="container-fluid">
@@ -69,33 +30,45 @@
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
-                <p class="error"><%= errors.firstName %></p>
+                <p class="error">
+                    <%= errors.firstName %>
+                </p>
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name</label>
                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name">
-                <p class="error"><%= errors.lastName %></p>
+                <p class="error">
+                    <%= errors.lastName %>
+                </p>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-                <p class="error"><%= errors.email %></p>
+                <p class="error">
+                    <%= errors.email %>
+                </p>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                <p class="error"><%= errors.password %></p>
+                <p class="error">
+                    <%= errors.password %>
+                </p>
             </div>
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
-                <p class="error"><%= errors.confirmPassword %></p>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                    placeholder="Confirm Password">
+                <p class="error">
+                    <%= errors.confirmPassword %>
+                </p>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Signup</button>
             <p class="text-center mt-3">
                 Already have an account? <a href="/login">Login</a>
             </p>
-            <a href="/auth/google"><button type="button" class="btn btn-outline-primary btn-block">Signup with Google</button></a>
+            <a href="/auth/google"><button type="button" class="btn btn-outline-primary btn-block">Signup with
+                    Google</button></a>
         </form>
     </div>
 
@@ -106,4 +79,5 @@
     <script src="/js/register.js"></script>
 
 </body>
+
 </html>

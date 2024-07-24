@@ -1,1 +1,39 @@
 
+.signup-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.header {
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-secondary {
+    background-color: #fdfeff;
+    border-color: #fafafa;
+    color: #007bff;
+}
+.btn-secondary:hover {
+    background-color: #fdfeff;
+    border-color: #fafafa;
+    color: #007bff;
+}
+.error{
+    color: red;
+    font-size: 13px;
+}
